@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int binsearch(int arr[],int size,int key)
+{
+    int lb=0,ub=size-1,mid,flag=0;
+    while(lb<=ub)
+    {
+        mid=(lb+ub)/2;
+        if(arr[mid]==key)
+        {
+            return mid;
+        }
+        else if(key>arr[mid])
+        lb=mid+1;
+        else
+        ub=mid-1;
+    }
+    return -1;
+
+}
+int main()
+{
+    int even[6]={2,4,6,8,12,18};
+    int odd[5]={3,8,11,14,16};
+    int index=binsearch(odd,5,8);
+    cout<<index<<endl;
+}
